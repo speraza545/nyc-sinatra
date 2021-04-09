@@ -1,5 +1,12 @@
 <h1><%= @figure.name %></h1>
-<p>titles: <%= @figure.titles == [] ? "N/A" : @figure.titles %></p>
-<p>landmarks: <%= @figure.landmarks == [] ? "N/A" : @figure.landmarks %></p>
+<h3>Titles:</h3>
+<% @figure.titles.each do |title| %>
+    <p><%= title.name%></p>
+<% end %>
+
+<h3>Landmarks:</h3>
+<% @figure.landmarks.each do |landmark| %>
+<p><%= landmark.name%></p>
+<% end %>
 <a href="/figures/<%= @figure.id%>/edit">Edit</a>
 
